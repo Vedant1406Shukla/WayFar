@@ -1,0 +1,46 @@
+{
+  "users": [
+    {
+      "id": "admin",
+      "email": "admin@abc.com",
+      "password": "admin",
+      "gender": "M",
+      "phone": "1234567890"
+    },
+    {
+      "id": "John",
+      "email": "john@abc.com",
+      "password": "abc",
+      "gender": "M",
+      "phone": "1234567890"
+    },
+    {
+      "id": "Alex",
+      "email": "alex@abc.com",
+      "password": "xyz@456",
+      "gender": "M",
+      "phone": "1234567891"
+    },
+    {
+      "id": "Harry",
+      "email": "harry@gmail.com",
+      "password": "harry",
+      "gender": "M",
+      "phone": "1234567490"
+    },
+    {
+      "id": "Jerry",
+      "email": "Jerry@swift.com",
+      "password": "RRY4%yuo9",
+      "gender": "M",
+      "phone": "1234567890"
+    },
+    {
+      "id": "Vedant Shukla",
+      "email": "vedantshukla1406@gmail.com",
+      "password": "Vedant@1234",
+      "gender": "M",
+      "phone": "+91-8177074508"
+    }
+  ]
+}

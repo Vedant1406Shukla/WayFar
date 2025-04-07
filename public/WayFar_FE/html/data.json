@@ -1,0 +1,42 @@
+[
+    {
+        "Packages": "Family Packages",
+        "Destinations": "<h1 style='color:red'>UAE - Land of Skyscrapers</h1>",
+        "PackageDetails": "1N Burj Khalifa, 1N Dubai Mall, 1N Safari Desert ₹ 59640 per head",
+        "BestTimetoVisit": {
+            "MarJun": "Yes",
+            "JulOct": "No",
+            "NovFeb": "Yes"
+        }
+    },
+    {
+        "Packages": "Affordable Package",
+        "Destinations": "India - Incredible Collision of Culture",
+        "PackageDetails": "2N Manali, 2N Shimla, 1N Agra, 2N Jaipur ₹ 41250 per head",
+        "BestTimetoVisit": {
+            "MarJun": "No",
+            "JulOct": "Yes",
+            "NovFeb": "Yes"
+        }
+    },
+    {
+        "Packages": "Best Seller Packages",
+        "Destinations": "Thailand - A country of contrasts",
+        "PackageDetails": "1N Phuket, 1N Krabi, 1N Bangkok, 2N Similan Island ₹ 86000 per head",
+        "BestTimetoVisit": {
+            "MarJun": "No",
+            "JulOct": "No",
+            "NovFeb": "Yes"
+        }
+    },
+    {
+        "Packages": "Luxury Package",
+        "Destinations": "USA - Imperial Cities and High Atlas Mountains",
+        "PackageDetails": "1D DisneyLand Park, 2N Walt Disney World Resort, 3N Island of Hawaii, 4N New York, 1D Grand Canyon National Park ₹ 159250 per head",
+        "BestTimetoVisit": {
+            "MarJun": "Yes",
+            "JulOct": "No",
+            "NovFeb": "Yes"
+        }
+    }
+]

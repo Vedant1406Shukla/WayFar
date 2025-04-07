@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta http-equiv="Content-Security-Policy"
+    content="style-src 'self' https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="../../css/main.css" />
+  <link href="https://fonts.googleapis.com/css?family=Abel&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet" />
+    <title>WayFar - USA</title>
+  </head>
+  <script>
+    if (self == top) {
+      document.documentElement.style.visibility = 'visible';
+    } else {
+      top.location = self.location;
+    }
+  </script>
+  <body>
+    <header class="nav-header">
+      <div class="nav-title">
+        <a href="./home.html">WayFar</a>
+      </div>
+      <input type="checkbox" id="nav-check" />
+      <div class="nav-btn">
+        <label for="nav-check">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+      </div>
+      <nav class="nav-links" aria-label="Navigation links in WayFar header">
+        <ul>
+          <li class="navItems"><a href="../index.html">HOME</a></li>
+          <li class="navItems">
+            <a href="../popular-destinations.html">POPULAR DESTINATIONS</a>
+          </li>
+          <li class="navItems">
+            <a href="../tour-packages.html">TOUR PACKAGES</a>
+          </li>
+          <li class="navItems"><a href="../offers.html">OFFERS</a></li>
+          <li class="navItems"><a href="../enquire-us.html">ENQUIRE US</a></li>
+          <li class="navItems"><a href="../gallery.html">GALLERY</a></li>
+          <li class="navItems"><a href="./faq.html">FAQ</a></li>
+          <li class="navItems"><a href="./Login.html">LOGOUT</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div class="place-row">
+        <div class="place-head">
+          <a href="../popular-destinations.html">Popular Destinations </a>/ USA
+        </div>
+        <br />
+        <div class="place-col">
+          <div class="place-card">
+            <div class="place-image">
+              <img
+                src="../../images/Disney Land park.webp"
+                alt="disneyland-park"
+              />
+              <div class="place-text">
+                USA
+              </div>
+            </div>
+            <div class="place-container">
+              <h4>
+                <strong>DisneyLand Park</strong>
+              </h4>
+
+              <p>
+                Most-visited theme park dedicated to fairy tales and Disney
+                characters <a href="./disneyland-park.html">See More</a>
+              </p>
+              <br>
+              
+              <span class="enclosure">
+                <span class="like">
+                  <button class="like">
+                    <i class="fa fa-thumbs-o-up" aria-hidden="true" onclick="like('ParkCounterlike')"></i>
+                  </button>
+                  <span id="ParkCounterlike">98</span>
+                </span>
+                <span class="dislike">
+                  <button class="dislike">
+                    <i class="fa fa-thumbs-o-down" aria-hidden="true" onclick="dislike('ParkCounterdislike')"></i>
+                  </button>
+                  <span id="ParkCounterdislike">11</span>
+                </span>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="place-col">
+          <div class="place-card">
+            <div class="place-image">
+              <img src="../../images/Walt disney world.jpg" alt="waltdisney" />
+              <div class="place-text">
+                USA
+              </div>
+            </div>
+            <div class="place-container">
+              <h4>
+                <strong>Walt Disney World Resort</strong>
+              </h4>
+
+              <p>
+                World famous resort with four theme parks and two water parks.
+                <a href="./waltdisney.html">See More</a>
+              </p>
+              <br>
+              <span class="enclosure">
+                <span class="like">
+                  <button class="like">
+                    <i class="fa fa-thumbs-o-up" aria-hidden="true" onclick="like('DisneyCounterlike')"></i>
+                  </button>
+                  <span id="DisneyCounterlike">125</span>
+                </span>
+                <span class="dislike">
+                  <button class="dislike">
+                    <i class="fa fa-thumbs-o-down" aria-hidden="true" onclick="dislike('DisneyCounterdislike')"></i>
+                  </button>
+                  <span id="DisneyCounterdislike">9</span>
+                </span>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="place-col">
+          <div class="place-card">
+            <div class="place-image">
+              <img src="../../images/islandofhawai.jpg" alt="islandofhawai" />
+              <div class="place-text">
+                USA
+              </div>
+            </div>
+            <div class="place-container">
+              <h4>
+                <strong> Island of Hawaii</strong>
+              </h4>
+
+              <p>
+                Largest island in US with active volcanoes.
+                <a href="./hawaii.html">See More</a>
+              </p>
+              <br>
+              <br/>
+              <span class="enclosure">
+                <span class="like">
+                  <button class="like">
+                    <i class="fa fa-thumbs-o-up" aria-hidden="true" onclick="like('HawaiiCounterlike')"></i>
+                  </button>
+                  <span id="HawaiiCounterlike">60</span>
+                </span>
+                <span class="dislike">
+                  <button class="dislike">
+                    <i class="fa fa-thumbs-o-down" aria-hidden="true" onclick="dislike('HawaiiCounterdislike')"></i>
+                  </button>
+                  <span id="HawaiiCounterdislike">1</span>
+                </span>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="place-col">
+          <div class="place-card">
+            <div class="place-image">
+              <img src="../../images/new york.jpg" alt="newyork" />
+              <div class="place-text">
+                USA
+              </div>
+            </div>
+            <div class="place-container">
+              <h4>
+                <strong>New York</strong>
+              </h4>
+
+              <p>
+                Offers best art exhibitions, fantastic Broadway theatre, and
+                hundreds of museums. <a href="./newyork.html">See More</a>
+              </p>
+              <br>
+              <span class="enclosure">
+                <span class="like">
+                  <button class="like">
+                    <i class="fa fa-thumbs-o-up" aria-hidden="true" onclick="like('NewyorkCounterlike')"></i>
+                  </button>
+                  <span id="NewyorkCounterlike">55</span>
+                </span>
+                <span class="dislike">
+                  <button class="dislike">
+                    <i class="fa fa-thumbs-o-down" aria-hidden="true" onclick="dislike('NewyorkCounterdislike')"></i>
+                  </button>
+                  <span id="NewyorkCounterdislike">2</span>
+                </span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <span> Copyright @ WayFar, 2025 </span>
+      <div class="footer-links">
+        <a href="../contact-us.html">Contact Us</a>
+        &nbsp;&nbsp;|&nbsp;&nbsp;
+        <a href="../terms-condition.html">Terms &amp; Conditions</a>
+        &nbsp;&nbsp;|&nbsp;&nbsp;
+        <a href="../about-us.html">About Us</a>
+      </div>
+    </footer>
+    <script>
+      var button = document.getElementsByClassName('dislike')
+  
+  
+      function dislike(arg) {
+        var x = parseInt(document.getElementById(arg).textContent)
+        x -= 1;
+        document.getElementById(arg).innerText = x;
+      };
+  
+      function like(arg) {
+        var y = parseInt(document.getElementById(arg).textContent)
+        y += 1;
+        document.getElementById(arg).innerText = y;
+      }
+  
+    </script>
+  </body>
+</html>

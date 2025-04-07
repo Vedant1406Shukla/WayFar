@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>WayFar - Details</title>
+    <meta http-equiv="Content-Security-Policy"content="style-src 'self'"/>
+    <link rel="stylesheet" href="../css/cities.css" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <script type="text/javascript" src="../js/purify.min.js"></script>
+    <script type="text/javascript" src="destinations.js"></script>
+</head>
+
+<body>
+    <header class="nav-header">
+        <div class="nav-title">
+            <a href="../html/home.html">WayFar</a>
+        </div>
+        <input type="checkbox" id="nav-check" />
+        <div class="nav-btn">
+            <label for="nav-check">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+        </div>
+        <nav class="nav-links" aria-label="Navigation links in WayFar header">
+            <ul>
+                <li class="navItems"><a href="../html/index.html">HOME</a></li>
+                <li class="navItems">
+                    <a href="../html/popular-destinations.html">POPULAR DESTINATIONS</a>
+                </li>
+                <li class="navItems">
+                    <a href="../html/tour-packages.html">TOUR PACKAGES</a>
+                </li>
+                <li class="navItems"><a href="../html/offers.html">OFFERS</a></li>
+                <li class="navItems"><a href="../html/enquire-us.html">ENQUIRE US</a></li>
+                <li class="navItems"><a href="../html/gallery.html">GALLERY</a></li>
+                <li class="navItems"><a href="./faq.html">FAQ</a></li>
+                <li class="navItems"><a href="./Login.html">LOGOUT</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="city-main">
+        <table role="presentation">
+            <tr>
+                <td class="city-description">
+                    <div class="city-head">
+                        <a href="../popular-destinations.html">Popular Destinations </a> /
+                        <span id="destinationName"></span>
+                    </div>
+
+                    <br />
+                    <span id="description"></span>
+                </td>
+                <td>
+                    <iframe id="iframe" width="" height="" title="map" sandbox="allow-scripts"></iframe>
+                </td>
+            </tr>
+        </table>
+    </main>
+    <footer>
+        <span> Copyright @ WayFar, 2025 </span>
+        <div class="footer-links">
+            <a href="../contact-us.html">Contact Us</a>
+            &nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href="../terms-condition.html">Terms &amp; Conditions</a>
+            &nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href="../about-us.html">About Us</a>
+        </div>
+    </footer>
+    <script>
+        var position = document.URL.indexOf("destination=") + 12;
+        var name = decodeURIComponent(document.URL.substring(position)).replace(/\+/g, ' ');
+        var sanitizedName = DOMPurify.sanitize(name, { ALLOWED_TAGS: [] })
+        document.getElementById("destinationName").innerText = sanitizedName;
+        var obj = destinations.find((destination) => destination.name.toLowerCase() == sanitizedName.toLowerCase());
+        if (obj) {
+            document.getElementById('description').innerText = obj.description
+            document.getElementById('iframe').setAttribute('src', obj.map)
+        }
+        else {
+            document.getElementById('description').innerText = "Not found"
+            document.getElementById('description').style.paddingTop = "-600px"
+            document.getElementById('iframe').setAttribute('src', "")
+        }
+    </script>
+</body>
+
+</html>

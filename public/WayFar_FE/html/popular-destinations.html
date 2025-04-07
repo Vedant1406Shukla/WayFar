@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Content-Security-Policy"
+        content="style-src 'self' https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Abel&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <title>WayFar - Destinations</title>
+</head>
+<body>
+    <header class="nav-header">
+        <div class="nav-title">
+            <a href="./home.html">WayFar</a>
+        </div>
+        <input type="checkbox" id="nav-check">
+        <div class="nav-btn">
+            <label for="nav-check">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+        </div>
+        <nav class="nav-links" aria-label="Navigation links in WayFar header">
+            <ul>
+                <li class="navItems"><a href="./index.html">HOME</a></li>
+                <li class="navItems"><a href="./popular-destinations.html">POPULAR DESTINATIONS</a></li>
+                <li class="navItems"><a href="./tour-packages.html">TOUR PACKAGES</a></li>
+                <li class="navItems"><a href="./offers.html">OFFERS</a></li>
+                <li class="navItems"><a href="./enquire-us.html">ENQUIRE US</a></li>
+                <li class="navItems"><a href="./gallery.html">GALLERY</a></li>
+                <li class="navItems"><a href="./faq.html">FAQ</a></li>
+                <li class="navItems"><a href="./Login.html">LOGOUT</a></li>
+
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <main>
+            <div class="destination-cardHolder">
+                <div class="d-form">
+                    <form method="GET" action="details.html">
+                        <input type="text" placeholder="Search a destination" name="destination" id="search"
+                            pattern="[A-Za-z]+">
+                        <button type="submit" id="searchButton">
+                            <em class="fa fa-search"> </em>
+                        </button>
+                    </form>
+                     
+                </div>
+                <div class="whole-card">
+                    <div class="india d-card" onclick="location.href='./india/india.html'">
+                        <!-- <a href="./india/india.html" class="text">India</a> -->
+                         <p class="te-xt">India</p>
+                    </div>
+                
+                    <div class="d-column france d-card" onclick="location.href='./france/france.html'">
+                        <!-- <a href="./france/france.html">France</a> -->
+                         <p class="te-xt">France</p>
+                    </div>
+                
+                    <div class="d-column usa d-card" onclick="location.href='./usa/usa.html'">
+                        <!-- <a href="./usa/usa.html">USA</a> -->
+                         <p class="te-xt">USA</p>
+                    </div>
+        
+                    <div class="d-column uae d-card" onclick="location.href='./uae/uae.html'">
+                        <!-- <a href="./uae/uae.html">UAE</a> -->
+                        <p class="te-xt">UAE</p> 
+                    </div>
+                    <div class="d-column singapore d-card" onclick="location.href='./singapore/singapore.html'">
+                        <!-- <a href="./singapore/singapore.html">Singapore</a> -->
+                        <p class="te-xt">Singapore</p>
+                    </div>
+                    <div class="d-column thailand d-card" onclick="location.href='./thailand/thailand.html'">
+                        <!-- <a href="./thailand/thailand.html">Thailand</a> -->
+                        <p class="te-xt">Thailand</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </main>
+    <footer>
+        <span> Copyright @ WayFar, 2025 </span>
+        <div class="footer-links">
+            <a href="./contact-us.html">Contact Us</a>
+            &nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href="./terms-condition.html">Terms &amp; Conditions</a>
+            &nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href="./about-us.html">About Us</a>
+        </div>
+    </footer>
+    <script>
+        document.getElementById("searchButton").addEventListener("click", function (event) {
+            event.preventDefault(); // Prevent the default form submission
+            const destination = document.getElementById("search").value;
+            if (destination.trim().toLowerCase()==='india') {
+                window.location.href = "india/india.html"; // Redirect to the India page
+            } 
+            else if (destination.trim().toLowerCase()==='france') {
+                window.location.href = "france/france.html"; // Redirect to the France page
+            } else if (destination.trim().toLowerCase()==='usa') {
+                window.location.href = "usa/usa.html"; // Redirect to the USA page
+            } else if (destination.trim().toLowerCase()==='uae') {
+                window.location.href = "uae/uae.html"; // Redirect to the UAE page
+            } else if (destination.trim().toLowerCase()==='singapore') {
+                window.location.href = "singapore/singapore.html"; // Redirect to the Singapore page
+            } else if (destination.trim().toLowerCase()==='thailand') {
+                window.location.href = "thailand/thailand.html"; // Redirect to the Thailand page
+            }
+            else {
+                alert("Invalid Destination...Please try again"); // Show an alert for invalid input
+            }
+        });
+    </script>
+</body>
+
+</html>
