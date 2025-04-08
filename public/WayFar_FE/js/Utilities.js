@@ -27,7 +27,7 @@ export class Utilities {
 
     //get user by email id
     static getUser = async ({ email }) => {
-        const response = await fetch("http://localhost:3000/users");
+        const response = await fetch("https://wayfar.netlify.app/users");
         const users = await response.json();
         // check if users exist
         if (users.length > 0) {
@@ -49,7 +49,7 @@ export class Utilities {
             const userExists = await this.getUser(user);
             if (!userExists) {
                 //post the new user to DB
-                await fetch('http://localhost:3000/users', {
+                await fetch('https://wayfar.netlify.app/users', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
