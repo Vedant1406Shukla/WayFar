@@ -7,9 +7,9 @@ var mysql = require('mysql');
 const { stat } = require('fs');
 
 var con = mysql.createConnection({
-  host: "127.0.0.1",
-  user: "root",
-  database:"wayfar"
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  database:process.env.DB_NAME
 });
 
 // Middleware to parse JSON request bodies
