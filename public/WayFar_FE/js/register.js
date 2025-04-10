@@ -1,5 +1,5 @@
 import {User} from '../js/User.js';
-import {Utilities} from './utilities.js';
+import {Utilities} from './Utilities.js';
 //get Gender
 function getGender(e) {
     if (e.target.fgender.checked || e.target.mgender.checked) {
@@ -16,7 +16,7 @@ const register = (e) => {
         const registerFormData = {
             email: e.target.email.value,
             password: e.target.password.value,
-            id: e.target.name.value,
+            name: e.target.name.value,
             gender: getGender(e),
             phone: e.target.code.value + '-' + e.target.phone.value
         }
@@ -24,11 +24,12 @@ const register = (e) => {
         //validate the new user data
         Utilities.validateNewUser(registerFormData)
         // create the user from validated data
-        const newUser = new User(registerFormData.id,
+        const newUser = new User(
                                  registerFormData.email,
                                  registerFormData.password,
                                  registerFormData.gender,
-                                 registerFormData.phone
+                                 registerFormData.phone,
+                                 registerFormData.name
                                 );
         // add the validated user to the DB
         Utilities.addUser(newUser);

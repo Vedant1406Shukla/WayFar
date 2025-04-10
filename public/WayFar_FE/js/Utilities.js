@@ -25,21 +25,18 @@ export class Utilities {
         }
     }
 
-    //get user by email id
+    // get user by email id
     static getUser = async ({ email }) => {
-        const response = await fetch("http://localhost:3000/users");
-        const users = await response.json();
-        // check if users exist
-        if (users.length > 0) {
-            // then find
-            const userFound = users.find(eachUser => eachUser.email === email);
-            if (userFound) {
-                return userFound;// user exists, then return that user
-            } else {
-                return false;//user not found  
+        const response = await fetch(`${process.env.HOST}/user?email=${encodeURIComponent(email)}`, {
+            method: 'GET',
+            headers: {
+                "Content-Type": "application/json"
             }
-        }
-    }
+        });
+        const users = await response.json();
+        return users;
+    };
+
 
 
     //add user to DB
@@ -47,9 +44,10 @@ export class Utilities {
         try {
             //check if user already exists
             const userExists = await this.getUser(user);
-            if (!userExists) {
+            console.log(userExists.status);
+            if (userExists.status === 404) {
                 //post the new user to DB
-                await fetch('http://localhost:3000/users', {
+                await fetch(`${process.env.HOST}/user`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -65,11 +63,11 @@ export class Utilities {
         }
     }
 
-        // authenticate the user
-    static authenticateUser =(formData, userFromDB)=>{
-        if(formData.password===userFromDB.password){
+    // authenticate the user
+    static authenticateUser = (formData, userFromDB) => {
+        if (formData.password === userFromDB.password) {
             return userFromDB;
-        }else{
+        } else {
             throw Error('The password does not match our database records');
         }
     }

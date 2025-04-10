@@ -1,17 +1,17 @@
 export class User{
     //members
-    id;
     email;
     password;
     gender;
-    phone
+    phone;
+    name;
     //constructor
-    constructor(id, eml, pwd, gndr, ph){
-        this.id = id;
+    constructor(eml, pwd, gndr, ph,nm){
         this.email = eml;
         this.password = pwd;
         this.gender = gndr;
         this.phone =ph;
+        this.name = nm;
     }
     //methods
     getUserEmail(){

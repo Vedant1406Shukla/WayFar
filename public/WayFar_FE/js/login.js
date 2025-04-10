@@ -1,4 +1,4 @@
-import {Utilities} from "./utilities.js";
+import {Utilities} from "./Utilities.js";
 //login
 const login=(e)=>{
     // fetch form data
@@ -18,7 +18,7 @@ const login=(e)=>{
     .then(user=> Utilities.authenticateUser(loginFormData,user))// authenticate the user
     .then(user=>{
         //set the local storage
-        localStorage.setItem('userName',user.id);
+        localStorage.setItem('userName',user.name);
         //navigate the user to the home page
         window.location='../html/index.html';
     })

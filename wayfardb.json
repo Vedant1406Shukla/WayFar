@@ -41,6 +41,20 @@
       "password": "Vedant@1234",
       "gender": "M",
       "phone": "+91-8177074508"
+    },
+    {
+      "id": "Travis Scott",
+      "email": "travis99@gmail.com",
+      "password": "Travis@2005",
+      "gender": "M",
+      "phone": "+91-9876543210"
+    },
+    {
+      "id": "Nishtha Shukla",
+      "email": "nishthashukla884@gmail.com",
+      "password": "Nishtha@1234",
+      "gender": "F",
+      "phone": "+91-8840800903"
     }
   ]
 }
