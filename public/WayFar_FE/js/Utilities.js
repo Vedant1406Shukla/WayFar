@@ -1,4 +1,5 @@
 export class Utilities {
+
     //validate the user
     static validateNewUser = (user) => {
         let validationMessage = '';
@@ -27,7 +28,7 @@ export class Utilities {
 
     // get user by email id
     static getUser = async ({ email }) => {
-        const response = await fetch(`${process.env.HOST}/user?email=${encodeURIComponent(email)}`, {
+        const response = await fetch(`${'http://localhost:3000'}/user?email=${encodeURIComponent(email)}`, {
             method: 'GET',
             headers: {
                 "Content-Type": "application/json"
@@ -47,7 +48,7 @@ export class Utilities {
             console.log(userExists.status);
             if (userExists.status === 404) {
                 //post the new user to DB
-                await fetch(`${process.env.HOST}/user`, {
+                await fetch(`${'http://localhost:3000'}/user`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
