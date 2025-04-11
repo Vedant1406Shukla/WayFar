@@ -20,6 +20,7 @@ const login=(e)=>{
         //set the local storage
         localStorage.setItem('userName',user.name);
         //navigate the user to the home page
+        alert("Logged in successfully")
         window.location='../html/index.html';
     })
     .catch(err=>{

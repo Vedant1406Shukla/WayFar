@@ -35,7 +35,7 @@
                 <li class="navItems"><a href="./enquire-us.html">ENQUIRE US</a></li>
                 <li class="navItems"><a href="./gallery.html">GALLERY</a></li>
                 <li class="navItems"><a href="./faq.html">FAQ</a></li>
-                <li class="navItems"><a href="./Login.html">LOGOUT</a></li>
+                <li class="navItems" id="log"><a href="./login.html">LOGIN</a></li>
 
             </ul>
         </nav>
@@ -154,6 +154,25 @@
             <a href="./about-us.html">About Us</a>
         </div>
     </footer>
+    <script>
+         function getChange() {
+     let username = localStorage.getItem('userName');
+     if(username==null){
+      document.getElementById('log').innerHTML = `<a href="./login.html">LOGIN</a>`;  
+     if(username!=null){
+      document.getElementById('log').innerHTML = `<a href="./login.html" onclick="logout()">LOGOUT</a>`;
+     }
+    }
+  }
+  function logout() {
+    localStorage.removeItem('userName');
+    alert('You have been logged out successfully!');
+    document.getElementById('welcome').innerHTML = `Hi, Welcome`;
+    document.getElementById('log').innerHTML = `<a href="./login.html">LOGIN</a>`;
+    location.assign('./login.html');
+  }
+  getChange();
+    </script>
 </body>
 
 </html>

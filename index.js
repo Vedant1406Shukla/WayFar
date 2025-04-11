@@ -72,5 +72,5 @@ app.post('/user', async (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Server running on https://wayfar.netlify.app/:${port}`);
+  console.log(`Server running on https://localhost/:${port}`);
 });
