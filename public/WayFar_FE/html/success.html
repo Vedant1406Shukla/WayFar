@@ -76,9 +76,9 @@
      let username = localStorage.getItem('userName');
      if(username==null){
       document.getElementById('log').innerHTML = `<a href="./login.html">LOGIN</a>`;  
-     if(username!=null){
-      document.getElementById('log').innerHTML = `<a href="./login.html" onclick="logout()">LOGOUT</a>`;
      }
+     else{
+      document.getElementById('log').innerHTML = `<a href="./login.html" onclick="logout()">LOGOUT</a>`;
     }
   }
   function logout() {
