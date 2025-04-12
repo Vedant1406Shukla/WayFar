@@ -97,10 +97,10 @@
      let username = localStorage.getItem('userName');
      if(username==null){
       document.getElementById('log').innerHTML = `<a href="./login.html">LOGIN</a>`;  
-     if(username!=null){
+     }
+     else{
       document.getElementById('log').innerHTML = `<a href="./login.html" onclick="logout()">LOGOUT</a>`;
      }
-    }
   }
   function logout() {
     localStorage.removeItem('userName');
