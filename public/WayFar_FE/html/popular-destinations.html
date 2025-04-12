@@ -96,6 +96,24 @@
         </div>
     </footer>
     <script>
+        function getChange() {
+     let username = localStorage.getItem('userName');
+     if(username==null){
+      document.getElementById('log').innerHTML = `<a href="./login.html">LOGIN</a>`;  
+     }
+     else{
+      document.getElementById('log').innerHTML = `<a href="./login.html" onclick="logout()">LOGOUT</a>`;
+     }
+  }
+  function logout() {
+    localStorage.removeItem('userName');
+    alert('You have been logged out successfully!');
+    document.getElementById('welcome').innerHTML = `Hi, Welcome`;
+    document.getElementById('log').innerHTML = `<a href="./login.html">LOGIN</a>`;
+    location.assign('./login.html');
+  }
+  getChange();
+        
         document.getElementById("searchButton").addEventListener("click", function (event) {
             event.preventDefault(); // Prevent the default form submission
             const destination = document.getElementById("search").value;
@@ -117,23 +135,6 @@
                 alert("Invalid Destination...Please try again"); // Show an alert for invalid input
             }
         });
-        function getChange() {
-     let username = localStorage.getItem('userName');
-     if(username==null){
-      document.getElementById('log').innerHTML = `<a href="./login.html">LOGIN</a>`;  
-     }
-     else{
-      document.getElementById('log').innerHTML = `<a href="./login.html" onclick="logout()">LOGOUT</a>`;
-     }
-  }
-  function logout() {
-    localStorage.removeItem('userName');
-    alert('You have been logged out successfully!');
-    document.getElementById('welcome').innerHTML = `Hi, Welcome`;
-    document.getElementById('log').innerHTML = `<a href="./login.html">LOGIN</a>`;
-    location.assign('./login.html');
-  }
-  getChange();
     </script>
 </body>
 
