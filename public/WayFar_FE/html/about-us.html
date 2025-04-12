@@ -15,7 +15,7 @@
 <body>
     <header class="nav-header">
         <div class="nav-title">
-            <a href="./home.html">WayFar</a>
+            <a href="./index.html">WayFar</a>
         </div>
         <input type="checkbox" id="nav-check">
         <div class="nav-btn">
@@ -75,31 +75,9 @@
                 </article><br />
             </article>
             <hr /><br />
-            <section class="container">
-                <section class="awards-section">
-                    <header>
-                        <h4>Awards</h4><br />
-                    </header>
-                    <ol>
-                        <li>WayFar is rated India’s Most Popular Resort Chain by the Times Travel Award, 2021.</li>
-                        <li>WayFar is voted India’s Favourite Resort Chain by Vacation IQ, 2018.</li>
-                        <li>Bestowed with the prestigious Silver Peacock Award for Sustainability 2016.</li>
-                        <li>Bestowed with the prestigious Silver Peacock Award for Sustainability 2016.</li>
-                    </ol>
-                </section>
-                <aside class="knowmore-section">
-                    <header>
-                        <h4>Know more about : </h4>
-                    </header>
-                    <ul>
-                        <li><a href="#">Times Travel Award</a></li>
-                        <li><a href="#">Vacation IQ</a></li>
-                        <li><a href="#">Silver Peacock Award</a></li>
-                    </ul>
-                </aside>
-            </section><br />
-        </section>
+           
     </main>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Created by- Vedant Shukla
     <footer>
         <span> Copyright @ WayFar, 2025 </span>
         <div class="footer-links">
@@ -111,23 +89,24 @@
         </div>
     </footer>
     <script>
-         function getChange() {
+    function getChange() {
      let username = localStorage.getItem('userName');
      if(username==null){
-      document.getElementById('log').innerHTML = `<a href="./login.html">LOGIN</a>`;  
+      document.getElementById('log').innerHTML = `<a href="./login.html">LOGIN</a>`;
      }
      else{
       document.getElementById('log').innerHTML = `<a href="./login.html" onclick="logout()">LOGOUT</a>`;
-     }
+      document.getElementById('welcome')
+              .innerHTML = `Hi ${username}, Welcome`;
+    }
   }
   function logout() {
     localStorage.removeItem('userName');
     alert('You have been logged out successfully!');
-    document.getElementById('welcome').innerHTML = `Hi, Welcome`;
     document.getElementById('log').innerHTML = `<a href="./login.html">LOGIN</a>`;
     location.assign('./login.html');
   }
-  getChange();
+  getChange()
     </script>
 </body>
 

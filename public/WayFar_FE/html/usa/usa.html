@@ -22,7 +22,7 @@
   <body>
     <header class="nav-header">
       <div class="nav-title">
-        <a href="./index.html">WayFar</a>
+        <a href="../index.html">WayFar</a>
       </div>
       <input type="checkbox" id="nav-check" />
       <div class="nav-btn">
@@ -44,8 +44,8 @@
           <li class="navItems"><a href="../offers.html">OFFERS</a></li>
           <li class="navItems"><a href="../enquire-us.html">ENQUIRE US</a></li>
           <li class="navItems"><a href="../gallery.html">GALLERY</a></li>
-          <li class="navItems"><a href="./faq.html">FAQ</a></li>
-          <li class="navItems"><a href="./Login.html">LOGOUT</a></li>
+          <li class="navItems"><a href="../faq.html">FAQ</a></li>
+          <li class="navItems"><a href="../login.html">LOGIN</a></li>
         </ul>
       </nav>
     </header>
@@ -57,7 +57,7 @@
         <br />
         <div class="place-col">
           <div class="place-card">
-            <div class="place-image">
+            <div class="place-image" onclick="location.href='./disneyland-park.html'">
               <img
                 src="../../images/Disney Land park.webp"
                 alt="disneyland-park"
@@ -97,7 +97,7 @@
 
         <div class="place-col">
           <div class="place-card">
-            <div class="place-image">
+            <div class="place-image" onclick="location.href='./waltdisney.html'">
               <img src="../../images/Walt disney world.jpg" alt="waltdisney" />
               <div class="place-text">
                 USA
@@ -133,7 +133,7 @@
 
         <div class="place-col">
           <div class="place-card">
-            <div class="place-image">
+            <div class="place-image" onclick="location.href='./hawaii.html'">
               <img src="../../images/islandofhawai.jpg" alt="islandofhawai" />
               <div class="place-text">
                 USA
@@ -170,7 +170,7 @@
 
         <div class="place-col">
           <div class="place-card">
-            <div class="place-image">
+            <div class="place-image" onclick="location.href='./newyork.html'">
               <img src="../../images/new york.jpg" alt="newyork" />
               <div class="place-text">
                 USA
@@ -216,21 +216,76 @@
       </div>
     </footer>
     <script>
-      var button = document.getElementsByClassName('dislike')
-  
-  
-      function dislike(arg) {
-        var x = parseInt(document.getElementById(arg).textContent)
-        x -= 1;
-        document.getElementById(arg).innerText = x;
-      };
-  
-      function like(arg) {
-        var y = parseInt(document.getElementById(arg).textContent)
-        y += 1;
-        document.getElementById(arg).innerText = y;
+          function getChange() {
+     let username = localStorage.getItem('userName');
+     if(username==null){
+      document.getElementById('log').innerHTML = `<a href="./login.html">LOGIN</a>`;
+     }
+     else{
+      document.getElementById('log').innerHTML = `<a href="./login.html" onclick="logout()">LOGOUT</a>`;
+      document.getElementById('welcome')
+              .innerHTML = `Hi ${username}, Welcome`;
+    }
+  }
+  function logout() {
+    localStorage.removeItem('userName');
+    alert('You have been logged out successfully!');
+    document.getElementById('log').innerHTML = `<a href="./login.html">LOGIN</a>`;
+    location.assign('./login.html');
+  }
+  getChange()
+    </script>
+    <script>
+      // Track user interaction state for each place
+      var userState = {};
+    
+      function updateCount(id, delta) {
+        const el = document.getElementById(id);
+        const current = parseInt(el.textContent);
+        el.textContent = current + delta;
       }
-  
+    
+      function like(id) {
+        const base = id.replace('Counterlike', '');
+        const likeId = base + 'Counterlike';
+        const dislikeId = base + 'Counterdislike';
+    
+        const current = userState[base] || null;
+    
+        if (current === 'like') {
+          // Undo like
+          updateCount(likeId, -1);
+          userState[base] = null;
+        } else {
+          // Add like
+          updateCount(likeId, 1);
+          if (current === 'dislike') {
+            updateCount(dislikeId, -1);
+          }
+          userState[base] = 'like';
+        }
+      }
+    
+      function dislike(id) {
+        const base = id.replace('Counterdislike', '');
+        const likeId = base + 'Counterlike';
+        const dislikeId = base + 'Counterdislike';
+    
+        const current = userState[base] || null;
+    
+        if (current === 'dislike') {
+          // Undo dislike
+          updateCount(dislikeId, -1);
+          userState[base] = null;
+        } else {
+          // Add dislike
+          updateCount(dislikeId, 1);
+          if (current === 'like') {
+            updateCount(likeId, -1);
+          }
+          userState[base] = 'dislike';
+        }
+      }
     </script>
   </body>
 </html>

@@ -15,7 +15,7 @@
 <body>
   <header class="nav-header">
     <div class="nav-title">
-      <a href="./home.html">WayFar</a>
+      <a href="./index.html">WayFar</a>
     </div>
     <input type="checkbox" id="nav-check" />
     <div class="nav-btn">
@@ -93,23 +93,24 @@
     </div>
   </footer>
   <script>
-     function getChange() {
+    function getChange() {
      let username = localStorage.getItem('userName');
      if(username==null){
-      document.getElementById('log').innerHTML = `<a href="./login.html">LOGIN</a>`;  
+      document.getElementById('log').innerHTML = `<a href="./login.html">LOGIN</a>`;
      }
      else{
       document.getElementById('log').innerHTML = `<a href="./login.html" onclick="logout()">LOGOUT</a>`;
-     }
+      document.getElementById('welcome')
+              .innerHTML = `Hi ${username}, Welcome`;
+    }
   }
   function logout() {
     localStorage.removeItem('userName');
     alert('You have been logged out successfully!');
-    document.getElementById('welcome').innerHTML = `Hi, Welcome`;
     document.getElementById('log').innerHTML = `<a href="./login.html">LOGIN</a>`;
     location.assign('./login.html');
   }
-  getChange();
+  getChange()
   </script>
 </body>
 
